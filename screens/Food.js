@@ -3,6 +3,7 @@ import { ScrollView, Image, Text, View, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AutoHeightImage from "react-native-auto-height-image";
 import SvgUri from "react-native-svg-uri";
+import { LinearGradient } from 'expo-linear-gradient';
 import { globalStyles } from '../styles/Global';
 
 export default class Food extends Component {
@@ -83,6 +84,7 @@ export default class Food extends Component {
           <SvgUri width="22" height="22" source={ require('../assets/icons/agriculture.svg') } fill='#FDFFFE' />
           <Text style={{ color: '#FDFFFE', fontFamily: 'Pretendard-SemiBold', fontSize: 14, marginLeft: 12 }}>주문하기</Text>
         </View>
+        <LinearGradient style={{ position: 'absolute', top: 0, left: 0, right: 0, width: '100%', height: 53 }} colors={['rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 0)']} />
       </View>
     );
   }
