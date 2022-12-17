@@ -1,13 +1,14 @@
-import { SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import SvgUri from "react-native-svg-uri";
 import { globalStyles } from '../styles/Global';
 
 import Block from "../components/Block";
 import SearchBar from "../components/SearchBar";
 
-function Search() {
+function Search({ navigation }) {
   return (
-    <ScrollView style={globalStyles.page} contentInsetAdjustmentBehavior="automatic">
+    <ScrollView style={globalStyles.page}>
       <SafeAreaView style={globalStyles.inner}>
         <View style={{ height: 44, flexDirection: 'row', alignItems: 'center', marginTop: 20 }}>
           <Text style={{ color: '#031F00', fontFamily: 'Pretendard-SemiBold', fontSize: 24 }}>검색</Text>
@@ -41,7 +42,9 @@ function Search() {
           <Category icon={ require('../assets/icons/calendar_month.svg') } name="월간" selected={ false }></Category>
         </ScrollView>
         <View style={{ marginTop: 15 }}>
-          <Block image={ require('../assets/chicken.png') } name="주르르치킨 성복점!" distance={ 2.4 } time={ 10 } cost={ 3000 } rate={ 3.5 } />
+          <TouchableOpacity activeOpacity={0.5} onPress={ () => navigation.navigate('Detail') }>
+            <Block image={ require('../assets/chicken.png') } name="주르르치킨 성복점!" distance={ 2.4 } time={ 10 } cost={ 3000 } rate={ 3.5 } />
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
     </ScrollView>

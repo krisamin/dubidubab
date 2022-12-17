@@ -1,4 +1,5 @@
-import { SafeAreaView, ScrollView, View, Text, Image, TextInput, useWindowDimensions } from 'react-native';
+import { ScrollView, View, Text, Image, Button, useWindowDimensions, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import AutoHeightImage from "react-native-auto-height-image";
 import SvgUri from "react-native-svg-uri";
 import { globalStyles } from '../styles/Global';
@@ -6,10 +7,10 @@ import { globalStyles } from '../styles/Global';
 import Block from "../components/Block";
 import SearchBar from "../components/SearchBar";
 
-export default function Home() {
+export default function Home({ navigation }) {
   const width = useWindowDimensions().width - 40;
   return (
-    <ScrollView style={globalStyles.page} contentInsetAdjustmentBehavior="automatic">
+    <ScrollView style={globalStyles.page}>
       <SafeAreaView style={globalStyles.inner}>
         <View style={{ height: 44, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20 }}>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -27,7 +28,9 @@ export default function Home() {
           <SvgUri style={{ opacity: 0.5, marginLeft: 18 }} width="12" height="12" source={ require('../assets/icons/chevron_right.svg') } fill='#031F00' />
         </View>
         <View style={{ marginTop: 15 }}>
-          <Block image={ require('../assets/chicken.png') } name="주르르치킨 성복점!" distance={ 2.4 } time={ 10 } cost={ 3000 } rate={ 3.5 } />
+          <TouchableOpacity activeOpacity={0.5} onPress={ () => navigation.navigate('Detail') }>
+            <Block image={ require('../assets/chicken.png') } name="주르르치킨 성복점!" distance={ 2.4 } time={ 10 } cost={ 3000 } rate={ 3.5 } />
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
     </ScrollView>

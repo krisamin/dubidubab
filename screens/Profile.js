@@ -1,10 +1,11 @@
-import { SafeAreaView, ScrollView, View, Text, Image } from 'react-native';
+import { ScrollView, View, Text, Image } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import SvgUri from "react-native-svg-uri";
 import { globalStyles } from '../styles/Global';
 
 export default function Profile() {
   return (
-    <ScrollView style={globalStyles.page} contentInsetAdjustmentBehavior="automatic">
+    <ScrollView style={globalStyles.page}>
       <SafeAreaView style={globalStyles.inner}>
         <View style={{ height: 44, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20 }}>
           <Text style={{ color: '#031F00', fontFamily: 'Pretendard-SemiBold', fontSize: 24 }}>프로필</Text>
