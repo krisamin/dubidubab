@@ -33,7 +33,7 @@ function Search({ navigation }) {
             <Tear no={ 5 } name="추천받습니다" />
           </View>
         </View>
-        <Text style={{ color: '#031F00', fontFamily: 'Pretendard-SemiBold', fontSize: 20, marginTop: 35 }}>우리동네 인기</Text>
+        <Text style={{ color: '#031F00', fontFamily: 'Pretendard-SemiBold', fontSize: 20, marginTop: 35 }}>우리동네 맛집</Text>
         <ScrollView style={{ marginTop: 15, overflow: 'visible' }} horizontal={ true } showsHorizontalScrollIndicator={ false }>
           <Category icon={ require('../assets/icons/stacked_line_chart.svg') } name="누적" selected={ true }></Category>
           <Category icon={ require('../assets/icons/timer.svg') } name="시간" selected={ false }></Category>

@@ -24,12 +24,21 @@ export default function Home({ navigation }) {
           <SearchBar />
         </View>
         <View style={{ marginTop: 35, flexDirection: 'row', alignItems: 'center' }}>
-          <Text style={{ fontFamily: 'Pretendard-SemiBold', fontSize: 20 }}>우리동네 맛집</Text>
+          <Text style={{ fontFamily: 'Pretendard-SemiBold', fontSize: 20 }}>우리동네 맛집 추천</Text>
           <SvgUri style={{ opacity: 0.5, marginLeft: 18 }} width="12" height="12" source={ require('../assets/icons/chevron_right.svg') } fill='#031F00' />
         </View>
         <View style={{ marginTop: 15 }}>
-          <TouchableOpacity activeOpacity={0.5} onPress={ () => navigation.navigate('Detail') }>
-            <Block image={ require('../assets/chicken.png') } name="주르르치킨 성복점!" distance={ 2.4 } time={ 10 } cost={ 3000 } rate={ 3.5 } />
+          <TouchableOpacity activeOpacity={0.5} onPress={ () => navigation.navigate('Food') }>
+            <Block image={ require('../assets/chicken.png') } name="망냥냥치킨 성복점" distance={ 2.4 } time={ 10 } cost={ 3000 } rate={ 3.5 } />
+          </TouchableOpacity>
+        </View>
+        <View style={{ marginTop: 35, flexDirection: 'row', alignItems: 'center' }}>
+          <Text style={{ fontFamily: 'Pretendard-SemiBold', fontSize: 20 }}>인기 공동구매</Text>
+          <SvgUri style={{ opacity: 0.5, marginLeft: 18 }} width="12" height="12" source={ require('../assets/icons/chevron_right.svg') } fill='#031F00' />
+        </View>
+        <View style={{ marginTop: 15 }}>
+          <TouchableOpacity activeOpacity={0.5} onPress={ () => navigation.navigate('Buy') }>
+            <Block image={ require('../assets/salade.png') } name="망냥냥치킨 성복점" distance={ 2.4 } time={ 10 } cost={ 3000 } rate={ 4.5 } />
           </TouchableOpacity>
         </View>
       </SafeAreaView>

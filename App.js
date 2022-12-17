@@ -12,7 +12,8 @@ import Home from "./screens/Home";
 import Category from "./screens/Category";
 import Search from "./screens/Search";
 import Profile from "./screens/Profile";
-import Detail from "./screens/Detail";
+import Food from "./screens/Food";
+import Buy from "./screens/Buy";
 
 //import "react-native-gesture-handler";
 import { NavigationContainer } from '@react-navigation/native';
@@ -35,13 +36,15 @@ export default function App() {
 
   return isReady ? (
     <NavigationContainer>
+      <StatusBar barStyle='light-content' />
       <Stack.Navigator
         screenOptions={{
           headerShown: false
         }}
       >
         <Stack.Screen name="Index" component={Indexs} />
-        <Stack.Screen name="Detail" component={Detail} />
+        <Stack.Screen name="Food" component={Food} />
+        <Stack.Screen name="Buy" component={Buy} />
       </Stack.Navigator>
     </NavigationContainer>
   ) : (
