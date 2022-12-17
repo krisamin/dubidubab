@@ -7,7 +7,7 @@ import { globalStyles } from '../styles/Global';
 
 export default class Food extends Component {
   state = {
-    page: 'menu'
+    page: 'review'
   }
   render() {
     return (
@@ -18,7 +18,7 @@ export default class Food extends Component {
             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 20 }}>
               <View>
                 <Text style={{ color: '#031F00', fontFamily: 'Pretendard-SemiBold', fontSize: 20 }}>망냥냥치킨 성복점</Text>
-                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 6 }}>
                   <SvgUri width="16" height="16" source={ require('../assets/icons/star_half.svg') } fill='#609C77' />
                   <Text style={{ color: '#609C77', fontFamily: 'Pretendard-Medium', fontSize: 16, marginLeft: 4 }}>3.5 / 5.0</Text>
                 </View>
@@ -69,11 +69,13 @@ export default class Food extends Component {
                 <Text style={{ fontFamily: 'Pretendard-SemiBold', fontSize: 20 }}>관련 영상</Text>
                 <SvgUri style={{ opacity: 0.5, marginLeft: 18 }} width="12" height="12" source={ require('../assets/icons/chevron_right.svg') } fill='#031F00' />
               </View>
-              <Video thumbnail={ require('../assets/thumbnail.png') } name="동료의 비즈니스... 주르르치킨 먹방" by="고세구 GOSEGU" views="24만 회" like="6.4천 개" />
+              <Video thumbnail={ require('../assets/thumbnail1.png') } name="동료의 비즈니스... 주르르치킨 먹방" by="고세구 GOSEGU" views="24만 회" like="6.4천 개" />
               <View style={{ marginTop: 36, flexDirection: 'row', alignItems: 'center' }}>
                 <Text style={{ fontFamily: 'Pretendard-SemiBold', fontSize: 20 }}>유저 리뷰</Text>
                 <SvgUri style={{ opacity: 0.5, marginLeft: 18 }} width="12" height="12" source={ require('../assets/icons/chevron_right.svg') } fill='#031F00' />
               </View>
+              <Comment profile={ require('../assets/profile/profile4.png') } name="백시현" rate="5.0" content="음식이 맛있고 사장님이 예뻐요" />
+              <Comment profile={ require('../assets/profile/profile5.png') } name="선린중피바라기" rate="5.0" content="우리 엄마가 해준 것 같아요" />
             </View>
           </SafeAreaView>
         </ScrollView>
@@ -141,3 +143,21 @@ function Video({thumbnail, name, by, views, like}) {
     </View>
   );
 }
+
+function Comment({profile, name, rate, content}) {
+  return (
+    <View>
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20 }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <Image style={{ width: 36, height: 36, borderRadius: '50%', marginRight: 10 }} source={ profile }></Image>
+          <Text style={{ color: '#031F00', fontFamily: 'Pretendard-Medium', fontSize: 16 }}>{ name }</Text>
+        </View>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <SvgUri width="20" height="20" source={ require('../assets/icons/star.svg') } fill='#609C77' />
+          <Text style={{ color: '#609C77', fontFamily: 'Pretendard-Medium', fontSize: 16, marginLeft: 8 }}>{ rate }</Text>
+        </View>
+      </View>
+      <Text style={{ color: '#609C77', fontFamily: 'Pretendard-Medium', fontsize: 16, marginTop: 12 }}>{ content }</Text>
+    </View>
+  )
+};

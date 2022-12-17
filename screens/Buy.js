@@ -17,8 +17,9 @@ export default class Buy extends Component {
           <SafeAreaView style={globalStyles.inner} edges={['left', 'right', 'bottom']}>
             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 20 }}>
               <View>
-                <Text style={{ color: '#031F00', fontFamily: 'Pretendard-SemiBold', fontSize: 20 }}>망냥냥치킨 성복점</Text>
-                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Text style={{ opacity: 0.5, color: '#031F00', fontFamily: 'Pretendard-Medium', fontSize: 16 }}>2인 공동구매 상품</Text>
+                <Text style={{ color: '#031F00', fontFamily: 'Pretendard-SemiBold', fontSize: 20, marginTop: 6 }}>욘욘 닭가슴살 그린샐러드</Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 6 }}>
                   <SvgUri width="16" height="16" source={ require('../assets/icons/star.svg') } fill='#609C77' />
                   <Text style={{ color: '#609C77', fontFamily: 'Pretendard-Medium', fontSize: 16, marginLeft: 4 }}>4.5 / 5.0</Text>
                 </View>
@@ -38,16 +39,42 @@ export default class Buy extends Component {
               <Category icon={ require('../assets/icons/add_business.svg') } name="공동구매 현황" selected={ this.state.page == 'menu' }></Category>
               <Category icon={ require('../assets/icons/rate_review.svg') } name="리뷰" selected={ this.state.page == 'review' }></Category>
             </ScrollView>
-            <View style={{ height: this.state.page == 'review' ? 'auto' : 0 ,overflow: this.state.page == 'review' ? 'visible' : 'hidden' }}>
-              <View style={{ marginTop: 20, flexDirection: 'row', alignItems: 'center' }}>
-                <Text style={{ fontFamily: 'Pretendard-SemiBold', fontSize: 20 }}>관련 영상</Text>
-                <SvgUri style={{ opacity: 0.5, marginLeft: 18 }} width="12" height="12" source={ require('../assets/icons/chevron_right.svg') } fill='#031F00' />
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20 }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Image style={{ width: 36, height: 36, borderRadius: '50%', marginRight: 10 }} source={ require('../assets/profile/profile1.png') }></Image>
+                <Text style={{ color: '#031F00', fontFamily: 'Pretendard-Medium', fontSize: 16 }}>주현명</Text>
               </View>
-              <Video thumbnail={ require('../assets/thumbnail.png') } name="동료의 비즈니스... 주르르치킨 먹방" by="고세구 GOSEGU" views="24만 회" like="6.4천 개" />
-              <View style={{ marginTop: 36, flexDirection: 'row', alignItems: 'center' }}>
-                <Text style={{ fontFamily: 'Pretendard-SemiBold', fontSize: 20 }}>유저 리뷰</Text>
-                <SvgUri style={{ opacity: 0.5, marginLeft: 18 }} width="12" height="12" source={ require('../assets/icons/chevron_right.svg') } fill='#031F00' />
+              <Text style={{ color: '#609C77', fontFamily: 'Pretendard-Medium', fontSize: 16 }}>1명 남음</Text>
+            </View>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 16 }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Image style={{ width: 36, height: 36, borderRadius: '50%', marginRight: 10 }} source={ require('../assets/profile/profile2.png') }></Image>
+                <Text style={{ color: '#031F00', fontFamily: 'Pretendard-Medium', fontSize: 16 }}>이상윤</Text>
               </View>
+              <Text style={{ color: '#609C77', fontFamily: 'Pretendard-Medium', fontSize: 16 }}>1명 남음</Text>
+            </View>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 16 }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Image style={{ width: 36, height: 36, borderRadius: '50%', marginRight: 10 }} source={ require('../assets/profile/profile2.png') }></Image>
+                <Text style={{ color: '#031F00', fontFamily: 'Pretendard-Medium', fontSize: 16 }}>하승호</Text>
+              </View>
+              <Text style={{ color: '#609C77', fontFamily: 'Pretendard-Medium', fontSize: 16 }}>1명 남음</Text>
+            </View>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 16 }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Image style={{ width: 36, height: 36, borderRadius: '50%', marginRight: 30 }} source={ require('../assets/profile/profile2.png') }></Image>
+                <Image style={{ width: 36, height: 36, borderRadius: '50%', position: 'absolute', left: 20 }} source={ require('../assets/profile/profile3.png') }></Image>
+                <Text style={{ color: '#031F00', fontFamily: 'Pretendard-Medium', fontSize: 16 }}>이재훈, 박성찬</Text>
+              </View>
+              <Text style={{ opacity: 0.5, color: '#031F00', fontFamily: 'Pretendard-Medium', fontSize: 16 }}>구매 완료</Text>
+            </View>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 16 }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Image style={{ width: 36, height: 36, borderRadius: '50%', marginRight: 30 }} source={ require('../assets/profile/profile4.png') }></Image>
+                <Image style={{ width: 36, height: 36, borderRadius: '50%', position: 'absolute', left: 20 }} source={ require('../assets/profile/profile2.png') }></Image>
+                <Text style={{ color: '#031F00', fontFamily: 'Pretendard-Medium', fontSize: 16 }}>백시현, 오지후</Text>
+              </View>
+              <Text style={{ opacity: 0.5, color: '#031F00', fontFamily: 'Pretendard-Medium', fontSize: 16 }}>구매 완료</Text>
             </View>
           </SafeAreaView>
         </ScrollView>
