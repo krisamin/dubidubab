@@ -8,7 +8,7 @@ import { globalStyles } from '../styles/Global';
 
 export default class Food extends Component {
   state = {
-    page: 'review'
+    page: 'menu'
   }
   render() {
     return (

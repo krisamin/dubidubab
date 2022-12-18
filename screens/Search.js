@@ -6,7 +6,7 @@ import { globalStyles } from '../styles/Global';
 import Block from "../components/Block";
 import SearchBar from "../components/SearchBar";
 
-function Search({ navigation }) {
+export default function Search({ navigation }) {
   return (
     <ScrollView style={globalStyles.page}>
       <SafeAreaView style={globalStyles.inner}>
@@ -42,7 +42,7 @@ function Search({ navigation }) {
           <Category icon={ require('../assets/icons/calendar_month.svg') } name="월간" selected={ false }></Category>
         </ScrollView>
         <View style={{ marginTop: 15 }}>
-          <TouchableOpacity activeOpacity={0.5} onPress={ () => navigation.navigate('Detail') }>
+          <TouchableOpacity activeOpacity={0.5} onPress={ () => navigation.navigate('Food') }>
             <Block image={ require('../assets/chicken.png') } name="주르르치킨 성복점!" distance={ 2.4 } time={ 10 } cost={ 3000 } rate={ 3.5 } />
           </TouchableOpacity>
         </View>
@@ -70,5 +70,3 @@ function Tear({ no, name }) {
     </View>
   );
 }
-
-export default Search;
